@@ -1087,6 +1087,8 @@ class JumpStartEstimator(Estimator):
             training_instance_type=self.instance_type,
         )
 
+        estimator_deploy_kwargs.instance_type = instance_type
+        
         predictor = super(JumpStartEstimator, self).deploy(
             **estimator_deploy_kwargs.to_kwargs_dict()
         )
